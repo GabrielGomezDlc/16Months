@@ -1,0 +1,268 @@
+/* estilos.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Kavoon", serif;
+    background-image: url('../img/backs2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; /* Evita que el fondo se repita */
+    background-attachment: fixed; /* Hace que el fondo permanezca fijo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.start-button {
+    font-family: "Kavoon", serif;
+    font-size:20px;
+    padding: 20px 50px;
+    border: none;
+    border-radius: 20px;
+    background-color: #a036f1;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.start-button:hover {
+    transform: scale(1.1);
+}
+
+.start-button i {
+    margin-right: 5px; /* Espacio entre el icono y el texto */
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    max-width: 800px;
+    width: 100%;
+    padding: 20px;
+    margin-top: 100px
+}
+
+.image-container {
+    flex: 1;
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.keyboard-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    margin-top: 20px;
+    font-size: 24px;
+    display: flex; /* Establece el contenedor como un flexbox */
+    flex-direction: column;
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+}
+
+.keyboard {
+    font-family: "Kavoon", serif;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.keyboard button {
+    padding: 20px 40px;
+    font-size: 18px;
+    border: none;
+    background-color: #a036f1;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 20px;
+
+}
+
+.keyboard button.active {
+    background-color: #bb96d9; /* Color de fondo cuando el botón está activo */
+    color:#a036f1; /* Color del texto cuando el botón está activo */
+}
+
+.accept-button {
+    font-family: "Kavoon", serif;
+    margin-top: 20px;
+    padding: 10px 40px;
+    font-size: 18px;
+    border: none;
+    background-color: #434756;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.accept-button:hover {
+    transform: scale(1.1);
+}
+
+.menu-container {
+    margin-top: 250px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+figure {
+    margin: 20px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+figure:hover {
+    transform: scale(1.1);
+}
+
+figcaption {
+    position: absolute;
+    bottom: -80px;
+    left: 60%;
+    transform: translateX(-50%);
+    padding: 15px 25px;
+    border-radius: 5px;
+    font-size: 28px;
+    width:200px
+
+}
+
+.photo-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left: 100px; /* Ajusta el padding según lo desees */
+    padding-right: 100px; /* Ajusta el padding según lo desees */
+
+}
+
+.photo {
+    width: calc(33.33% - 20px); /* Calcula el ancho para 3 columnas con margen */
+    margin-bottom: 20px; /* Ajusta el margen inferior según lo desees */
+}
+
+.photo img {
+    width: 98%;
+    height: 70%;
+    display: block;
+    box-shadow: 100px 100px 200px rgba(0, 0, 0, 0.2); transform: translate(0, -5px);"
+}
+
+.banner {
+    background-color: #ffcccc; /* Color de fondo del banner */
+    padding: 20px;
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 50px;
+    position: relative;
+    width: 1100px;
+}
+
+.banner h1 {
+    margin-top: 50px;
+    font-size: 50px;
+    color: #880000; /* Color del título */
+
+}
+
+.banner p{
+    font-size: 40px;
+}
+
+.heart-left,
+.heart-right {
+    position: absolute;
+    top: 0;
+    font-size: 60px;
+    color: red; /* Color del icono de corazón */
+}
+
+.heart-left {
+    left: -30px;
+    top:-20px
+}
+
+.heart-right {
+    right: -30px;
+    top:-20px
+}
+
+.banner img {
+    position: relative; /* Agrega posición relativa a la imagen */
+    height: 80px;
+    width: 80px;
+    display: block; /* Hace que la imagen sea un elemento de bloque */
+    margin: auto; /* Centra la imagen horizontalmente */
+    margin-bottom: 20px; /* Ajusta el margen inferior según lo desees */
+}
+
+.title_calendar {
+    background-color: #f3a0a0; /* Fondo medio rosado claro */
+    color: white; /* Letras blancas */
+    padding: 20px; /* Espacio interno */
+    position: relative; /* Para posicionar los corazones */
+    margin-top: 50px ;
+    border-radius:20px ;
+}
+
+.title_calendar::before,
+.title_calendar::after {
+    content: '\f004'; /* Código del corazón de Font Awesome */
+    font-family: 'Font Awesome 5 Free'; /* Fuente de Font Awesome */
+    position: absolute; /* Posición absoluta */
+    top: 0; /* A la esquina superior */
+    color: red; /* Color rojo */
+    font-size:60px;
+}
+
+.title_calendar::before {
+    left: -28px; /* A la esquina superior izquierda */
+    top: -30px; /* A la esquina superior izquierda */
+}
+
+.title_calendar::after {
+    right: -28px; /* A la esquina superior derecha */
+    top: -30px;
+}
+
+.subtitle_calendar {
+    background-color: #a036f1;
+    padding: 20px;
+    border-radius:20px ;
+    margin-top: 20px; /* Espacio superior */
+}
+
+.number {
+    font-size: 3em; /* Tamaño de fuente más grande para los números */
+    color:#a036f1
+}
+
+.paragraph-calendar {
+    background-color: #fcdfdf;
+    max-width:1200px;
+    padding: 20px;
+    border-radius:20px ;
+    font-size: 30px;
+    font-weight: normal;
+    text-align: center;
+    color: #4f4848;
+}

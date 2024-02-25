@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>16 Months</title>
+    <link rel="stylesheet" href="utils/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+<iframe width="0" height="0" src="https://www.youtube.com/embed/MMkBFpv_GpM?autoplay=1&loop=1" title="The Carpenters; Close to you (Español)" frameborder="0" allow="autoplay" ></iframe>
+<h1 class="title_calendar"> ¡Nuestra fecha hoy de 16 meses mi pequeña! </h1>
+<img src="img/calendar2.png" alt="Descripción de la imagen" style="width: 480px; height: 480px">
+<h2 class="subtitle_calendar" style="font-weight: lighter">¿Cuánto tiempo ha pasado desde nuestro primer 25 mi chiquita preciosa? 👀<i class="fas fa-heart"></i> <i class="fas fa-heart"></i> <i class="fas fa-heart"></i></h2>
+<div id="clock" style="margin-top:25px; font-size:2em"> <span class="number" id="years">0</span> años, <span class="number" id="months">0</span> meses, <span class="number" id="days">0</span> días, <span class="number" id="hours">0</span> horas, <span class="number" id="minutes">0</span> minutos, <span class="number" id="seconds">0</span> segundos.</div>
+<h2 class="paragraph-calendar"> Cada momentito a tu lado el más bonitisisisisimo de todita mi vida mi Maraya preciosisisismaaa 😽😽😽<i class="fas fa-heart" style="color:#f55a5a"></i> <i class="fas fa-heart" style="color:#f55a5a"></i> <i class="fas fa-heart" style="color:#f55a5a"></i> </h2>
+<button onclick="location.href='menu.html'" class="start-button" ><i class="fas fa-heart"></i> Regresar</button>
+<div style="padding-top: 50px; color:rgba(255,0,0,0)"> asd</div>
+
+</body>
+<script>
+    // Calcula el tiempo transcurrido desde el 25 de octubre de 2022
+    var startDate = new Date('October 25, 2022 00:00:00').getTime();
+
+    // Actualiza el reloj cada segundo
+    var timer = setInterval(function() {
+        var now = new Date().getTime();
+        var timePassed = now - startDate;
+
+        var years = Math.floor(timePassed / (1000 * 60 * 60 * 24 * 365));
+        var days = Math.floor((timePassed % (1000 * 60 * 60 * 24 * 365)) / (1000 * 60 * 60 * 24));
+        var months = Math.floor(days / 30);
+        var hours = Math.floor((timePassed % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timePassed % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timePassed % (1000 * 60)) / 1000);
+
+        document.getElementById('years').textContent = years;
+        document.getElementById('months').textContent = months;
+        document.getElementById('days').textContent = days;
+        document.getElementById('hours').textContent = hours;
+        document.getElementById('minutes').textContent = minutes;
+        document.getElementById('seconds').textContent = seconds;
+    }, 1000);
+</script>
+</html>

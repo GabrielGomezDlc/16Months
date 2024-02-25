@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>16 Months</title>
+    <link rel="stylesheet" href="utils/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- SweetAlert2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+<div class="container">
+    <div class="image-container">
+        <img src="img/foto1.jpg" alt="Imagen" style="height:400px; width:300px; box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2); transform: translate(0, -5px);">
+    </div>
+    <div class="keyboard-container">
+        <div class="title">
+
+            <h5 style="font-weight: lighter">Ingrese el código mi pequeña 👀 <i class="fas fa-heart" style="color:#f55a5a"></i> <i class="fas fa-heart" style="color:#f55a5a"></i> <i class="fas fa-heart" style="color:#f55a5a"></i></h5>
+        </div>
+        <div class="keyboard">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+            <button>4</button>
+            <button>5</button>
+            <button>6</button>
+            <button>7</button>
+            <button>8</button>
+            <button>9</button>
+            <button style="background-color: rgba(160,54,241,0);" disabled></button>
+            <button>0</button>
+            <button style="background-color: rgba(160,54,241,0);" disabled></button>
+        </div>
+        <button class="accept-button">Aceptar</button>
+    </div>
+</div>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('.keyboard button');
+        const acceptButton = document.querySelector('.accept-button');
+
+        acceptButton.addEventListener('click', function() {
+            const selectedButtons = Array.from(buttons).filter(button => button.classList.contains('active'));
+            const selectedValues = selectedButtons.map(button => button.textContent);
+
+            if (selectedValues.length === 2 && selectedValues.includes('2') && selectedValues.includes('5')) {
+                Swal.fire({
+                    title: '¡Correcto mi amorcito preciosaaa, es nuestra fecha mi bebé hermosaaaa ♥♥♥♥♥!',
+                    icon: 'success',
+                    confirmButtonText: 'Continuar ♥'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = 'menu.html';
+                    }
+                });
+            } else {
+                Swal.fire({
+                    title: 'Incorrecto',
+                    text: 'Nono mi amorcito esos no son :,u',
+                    icon: 'error',
+                    confirmButtonText: 'Tu puedes mi niña hermosaaa ♥♥♥'
+                });
+            }
+        });
+
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+    });
+</script>
+</html>
